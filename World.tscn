@@ -8,11 +8,13 @@
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
+z_index = 1
 script = ExtResource( 3 )
 Trash = ExtResource( 4 )
 Bullet = ExtResource( 6 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
+z_index = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 

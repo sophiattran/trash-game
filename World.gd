@@ -16,4 +16,4 @@ func spawnBullet(pos):
 	var bullet = Bullet.instance()
 	add_child(bullet)
 	bullet.position = pos 
-	bullet.velocity = (get_global_mouse_position()-pos).normalized()*10
+	bullet.apply_impulse(Vector2.ZERO, (get_global_mouse_position()-pos).normalized()*2000)

@@ -14,8 +14,8 @@ var trash = null
 onready var gauge = $'/root/Game/CanvasLayer/GUI/HBoxContainer/Bar/Gauge'
 
 func _ready():
-	position.y = 100
-	position.x = -2000
+	position.y = 150
+	position.x = -1000
 	$AnimatedSprite.play("idle")
 
 func _physics_process(delta):
@@ -42,9 +42,9 @@ func get_movement_input():
 	var left = Input.is_action_pressed("ui_left")
 	var jump = Input.is_action_just_pressed("ui_up")
 
-	if jumping and jump and gauge.health>=25: 
+	if jumping and jump and gauge.health>=20: 
 		velocity.y = jump_speed
-		gauge.update_energy_bar(-25)
+		gauge.update_energy_bar(-20)
 	
 	if jump and is_on_floor():
 		jumping = true

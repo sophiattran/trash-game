@@ -1,14 +1,20 @@
-extends Area2D
+extends RigidBody2D
 
+onready var core = $'../TrashMonster/Core'
 
-export (Vector2) var velocity = Vector2()
+func _on_LifeTimer_timeout():
+	queue_free()
 
-func _ready():
-	pass
+func _on_Bullet_body_entered(body):
+	#play blasting animation
+	sleeping = true
+	set_collision_mask(0)
+	$AnimatedSprite.play("explosion")
+	$LifeTimer.start()
+	
+	if body.is_in_group("trash"): 
+		body.set_collision_layer(0)
+		body.queue_free()
+	elif body == core:
+		print("core hit, decrease monster's health")
 
-func _physics_process(delta):
-	position += velocity
-
-
-func _on_lifeTimer_timeout():
-	$lifeTimer.queue_free()
