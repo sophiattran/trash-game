@@ -8,5 +8,7 @@ position = Vector2( -10, 80 )
 scale = Vector2( 3.67787, 3.7727 )
 z_index = 2
 texture = ExtResource( 1 )
-offset = Vector2( 8, 30 )
 script = ExtResource( 2 )
+
+[node name="muzzle" type="Position2D" parent="."]
+position = Vector2( 120, 23 )

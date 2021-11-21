@@ -1,6 +1,7 @@
 extends Node2D
 
 export (PackedScene) var Trash
+export (PackedScene) var Bullet 
 
 func _ready():
 	randomize()
@@ -10,7 +11,9 @@ func spawnTrash(pos, impulse):
 	add_child(trash)
 	trash.position = pos
 	trash.apply_impulse(Vector2.ZERO, impulse)
-	
-	
-	
-	
+
+func spawnBullet(pos):
+	var bullet = Bullet.instance()
+	add_child(bullet)
+	bullet.position = pos 
+	bullet.velocity = (get_global_mouse_position()-pos).normalized()*10

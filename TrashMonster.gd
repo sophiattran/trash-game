@@ -19,9 +19,9 @@ func fireTopLeft(power):
 
 
 func getRandomPower():
-	return random.randf_range(500, 1000)
+	return random.randf_range(100, 1000)
 func getRandomYoffset():
-	return random.randf_range(-0.5, 0.5)
+	return random.randf_range(-1, 1)
 
 func _on_firingTimer_timeout():
 	fireTopLeft(getRandomPower())

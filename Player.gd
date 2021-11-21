@@ -30,9 +30,6 @@ func _physics_process(delta):
 	if jumping and is_on_floor():
 		jumping = false
 
-	if trash and Input.is_action_just_pressed("ui_accept"): 
-		throw_trash() 
-		
 func kinematic_rigid_interaction():
 	for index in get_slide_count(): 
 		var collision = get_slide_collision(index)
@@ -45,9 +42,9 @@ func get_movement_input():
 	var left = Input.is_action_pressed("ui_left")
 	var jump = Input.is_action_just_pressed("ui_up")
 
-	if jumping and jump and gauge.health>=20: 
+	if jumping and jump and gauge.health>=25: 
 		velocity.y = jump_speed
-		gauge.update_energy_bar(-20)
+		gauge.update_energy_bar(-25)
 	
 	if jump and is_on_floor():
 		jumping = true
@@ -60,15 +57,3 @@ func get_movement_input():
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.flip_h = velocity.x < 0
 
-func lift_trash(obj):
-	$AnimatedSprite.play("lift")
-	trash = obj
-
-func throw_trash():
-	trash.free_self()
-	if $AnimatedSprite.flip_h:
-		trash.apply_impulse(Vector2.ZERO, -throw_speed)
-	else:
-		trash.apply_impulse(Vector2.ZERO, throw_speed)
-	trash = null
-	$AnimatedSprite.play("idle")

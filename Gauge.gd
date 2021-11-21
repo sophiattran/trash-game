@@ -11,8 +11,9 @@ func _ready():
 	
 func update_energy_bar(amount):
 	health += amount
+	if health > 100: health = 100
 	get_node('/root/Game/CanvasLayer/GUI/HBoxContainer/Bar/Gauge').set_value(health)
-	number.update_text(amount)
+	number.update_text(health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

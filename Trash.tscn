@@ -1,22 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://soda trash.png" type="Texture" id=1]
 [ext_resource path="res://Trash.gd" type="Script" id=2]
-[ext_resource path="res://abstract-platformer-370-assets/PNG/Items/outlineDisc_alt.png" type="Texture" id=3]
 [ext_resource path="res://banana trash.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.1366, 32.3729 )
+extents = Vector2( 26, 31.5 )
 
-[node name="Trash" type="RigidBody2D" groups=[
-"trash",
-]]
+[node name="Trash" type="RigidBody2D" groups=["trash"]]
 input_pickable = true
 gravity_scale = 2.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 0, 2.5 )
 shape = SubResource( 1 )
 
 [node name="Soda" type="Sprite" parent="."]
@@ -28,13 +25,3 @@ texture = ExtResource( 1 )
 visible = false
 scale = Vector2( 0.075, 0.075 )
 texture = ExtResource( 4 )
-
-[node name="mouse_over" type="Sprite" parent="."]
-visible = false
-texture = ExtResource( 3 )
-
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="mouse_entered" from="." to="." method="_on_Trash_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Trash_mouse_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
