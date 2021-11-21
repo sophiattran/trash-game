@@ -17,9 +17,10 @@ Bullet = ExtResource( 6 )
 z_index = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1000, 400 )
 
 [node name="TestTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="TrashMonster" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1800, 200 )
+position = Vector2( -200, 250 )

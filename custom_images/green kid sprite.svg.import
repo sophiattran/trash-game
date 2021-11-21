@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vacuum.svg-5c0a636b66bb519538e9c9e9f58770d4.stex"
+path="res://.import/green kid sprite.svg-4f2ef9cdc464f2a408078b1c2ddacb16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vacuum.svg"
-dest_files=[ "res://.import/vacuum.svg-5c0a636b66bb519538e9c9e9f58770d4.stex" ]
+source_file="res://custom_images/green kid sprite.svg"
+dest_files=[ "res://.import/green kid sprite.svg-4f2ef9cdc464f2a408078b1c2ddacb16.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star background.png-bc633799b688de2f617b0a095754349c.stex"
+path="res://.import/star background.png-4e4a8a62e7ab52dc2b4755737fd35594.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://star background.png"
-dest_files=[ "res://.import/star background.png-bc633799b688de2f617b0a095754349c.stex" ]
+source_file="res://custom_images/star background.png"
+dest_files=[ "res://.import/star background.png-4e4a8a62e7ab52dc2b4755737fd35594.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -1,19 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Vacuum.tscn" type="PackedScene" id=2]
-[ext_resource path="res://green kid .svg" type="Texture" id=3]
+[ext_resource path="res://custom_images/green kid .svg" type="Texture" id=3]
+[ext_resource path="res://custom_sounds/GDC_F21_SFX_jump.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.3901
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "lift",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
@@ -36,13 +32,15 @@ animation = "idle"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 50 )
 offset = Vector2( 0, -200 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
-limit_left = -2500
-limit_top = -150
 
 [node name="vacuum" parent="." instance=ExtResource( 2 )]
 position = Vector2( -15, 80 )
 scale = Vector2( 0.92, 0.943 )
 offset = Vector2( -75, -125 )
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

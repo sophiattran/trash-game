@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/banana trash.png-616371a4b787f470364492912f05d185.stex"
+path="res://.import/vacuum.svg-ef2ba2f3736831b46d6d3b7212e191db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://banana trash.png"
-dest_files=[ "res://.import/banana trash.png-616371a4b787f470364492912f05d185.stex" ]
+source_file="res://custom_images/vacuum.svg"
+dest_files=[ "res://.import/vacuum.svg-ef2ba2f3736831b46d6d3b7212e191db.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -15,6 +15,7 @@ func _on_Bullet_body_entered(body):
 	if body.is_in_group("trash"): 
 		body.set_collision_layer(0)
 		body.queue_free()
+		$BlastSound.play()
 	elif body == core:
 		print("core hit, decrease monster's health")
 

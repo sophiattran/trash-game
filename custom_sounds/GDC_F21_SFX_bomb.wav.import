@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GDC_F21_SFX_bomb.wav-8dc6ca9320e1800101f7ade65e9f19dc.sample"
+
+[deps]
+
+source_file="res://custom_sounds/GDC_F21_SFX_bomb.wav"
+dest_files=[ "res://.import/GDC_F21_SFX_bomb.wav-8dc6ca9320e1800101f7ade65e9f19dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

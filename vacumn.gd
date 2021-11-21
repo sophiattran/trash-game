@@ -12,16 +12,16 @@ func _physics_process(delta):
 	rotation_degrees = 0
 	look_at(mouse_pos)
 	rotation_degrees -= 15
-	if Input.is_action_pressed("left_click"): 
-		if (mouse_pos.distance_to(muzzle.global_position) < mouse_pos.distance_to(global_position)):
-			vacuuming = true
-		else: vacuuming = false
+	if !vacuuming and Input.is_action_pressed("left_click"): vacuuming = true
 	if Input.is_action_just_released("left_click"): vacuuming = false
 	if Input.is_action_just_pressed("F") and gauge.health>=5: 
 		world.spawnBullet(muzzle.global_position)
 		gauge.update_energy_bar(-5)
+		$ShootingSound.play()
 		
 	if vacuuming: 
+		#if !$VacuumSound.is_playing(): 
+		$VacuumSound.play()
 		var source_pos = muzzle.global_position
 		get_tree().call_group("trash", "fly_towards", source_pos, (mouse_pos-source_pos).normalized())
 		
