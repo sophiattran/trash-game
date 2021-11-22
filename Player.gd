@@ -12,6 +12,7 @@ var jumping = false
 var trash = null
 
 onready var gauge = $'/root/Game/CanvasLayer/GUI/HBoxContainer/Bar/Gauge'
+onready var world = $'../'
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -21,7 +22,6 @@ func _physics_process(delta):
 	kinematic_rigid_interaction()
 	
 	velocity.y += gravity*delta 
-	
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
 	
 	
@@ -57,3 +57,11 @@ func get_movement_input():
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.flip_h = velocity.x < 0
 
+	
+func die():
+	var camera = world.get_node("Camera2D")
+	camera.position = position
+	camera.position.y -= 250
+	camera.zoom = Vector2(2,2)
+	camera.current = true
+	queue_free()	
