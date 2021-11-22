@@ -7,8 +7,6 @@ onready var topLeft = $'../TrashMonster/topLeftCore'
 onready var topRight = $'../TrashMonster/topRightCore'
 onready var botRight = $'../TrashMonster/bottomRightCore'
 
-func _on_LifeTimer_timeout():
-	queue_free()
 
 func _on_Bullet_body_entered(body):
 	#play blasting animation
@@ -37,4 +35,6 @@ func _on_Bullet_body_entered(body):
 		monster.botRightHealth -= 10
 		print("hit bottom right, health:", monster.botRightHealth)
 		monster.botRight_low_health()
-		
+
+func _on_AnimatedSprite_animation_finished():
+	queue_free()

@@ -24,7 +24,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="TrashMonster" parent="." instance=ExtResource( 5 )]
-position = Vector2( -200, 250 )
+position = Vector2( 0, 250 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

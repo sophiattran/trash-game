@@ -9,8 +9,8 @@ onready var blast_area = $BlastArea/CollisionShape2D
 var area_of_effect = Vector2(6,6)
 var blasted = false
 
-func _ready():
-	$TimerSound.play()
+
+	
 
 func blast_off():
 	blast_area.scale = area_of_effect
@@ -22,12 +22,15 @@ func blast_off():
 func _on_Nuke_body_entered(body):
 	if !blasted and (body==ground or body==player):
 		blasted = true
-		blast_off()
+		$TimerSound.play()		
 
 func _on_BlastArea_body_entered(body):
 	if body==player: player.die()
-	elif body==ground or body==monster or body.is_in_group("nukes"): pass
+	elif body==ground or body==monster or body.is_in_group("nukes") or body.get_node("../")==monster: pass
 	else: body.queue_free()
 
 func _on_AnimatedSprite_animation_finished():
 	queue_free()
+
+func _on_TimerSound_finished():
+	blast_off()

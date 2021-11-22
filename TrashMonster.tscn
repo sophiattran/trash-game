@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://abstract-platformer-370-assets/PNG/Enemies/enemySpikey_2.png" type="Texture" id=1]
 [ext_resource path="res://abstract-platformer-370-assets/PNG/Tiles/Blue tiles/tileBlue_03.png" type="Texture" id=2]
@@ -9,12 +9,232 @@
 [ext_resource path="res://assets/chararacters/buddy_green.png" type="Texture" id=7]
 [ext_resource path="res://assets/chararacters/foe_pink.png" type="Texture" id=8]
 [ext_resource path="res://Nuke.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/31-316525_explosion-animation-png.png" type="Texture" id=10]
+[ext_resource path="res://custom_sounds/GDC_F21_SFX_bomb.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320, 59.25 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 59.5546
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 256, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 512, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 768, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1024, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1280, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1536, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1792, 0, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 256, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 512, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 768, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1024, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1280, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1536, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1792, 248, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 256, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 512, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 768, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1024, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1280, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1536, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1792, 496, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 256, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 512, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 768, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1024, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1280, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1536, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1792, 744, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 256, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 512, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 768, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1024, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1280, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1536, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1792, 992, 256, 248 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 1240, 256, 248 )
+
+[sub_resource type="SpriteFrames" id=51]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "explosion",
+"speed": 30.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="TrashMonster" type="RigidBody2D"]
 z_index = 1
@@ -24,7 +244,10 @@ script = ExtResource( 3 )
 Nuke = ExtResource( 9 )
 
 [node name="firingTimer" type="Timer" parent="."]
-wait_time = 2.0
+autostart = true
+
+[node name="NukeTimer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -92,14 +315,18 @@ z_index = 1
 shape = SubResource( 2 )
 
 [node name="green_light" type="Sprite" parent="bottomLeftCore"]
-position = Vector2( -688, -36 )
+position = Vector2( -275, 100 )
+rotation = 1.5708
 scale = Vector2( 1, 0.25 )
+z_index = 1
 texture = ExtResource( 7 )
 
 [node name="red_light" type="Sprite" parent="bottomLeftCore"]
 visible = false
-position = Vector2( -686.148, -30.5028 )
+position = Vector2( -275, 100 )
+rotation = 1.5708
 scale = Vector2( 1.49256, 0.125253 )
+z_index = 1
 texture = ExtResource( 8 )
 
 [node name="topLeftCore" type="StaticBody2D" parent="."]
@@ -117,14 +344,18 @@ z_index = 1
 shape = SubResource( 2 )
 
 [node name="green_light" type="Sprite" parent="topLeftCore"]
-position = Vector2( -360.628, -293.114 )
+position = Vector2( -170, -165 )
+rotation = 2.35619
 scale = Vector2( 1, 0.25 )
+z_index = 1
 texture = ExtResource( 7 )
 
 [node name="red_light" type="Sprite" parent="topLeftCore"]
 visible = false
-position = Vector2( -358.776, -293.596 )
+position = Vector2( -170, -165 )
+rotation = -0.785398
 scale = Vector2( 1.49256, 0.125253 )
+z_index = 1
 texture = ExtResource( 8 )
 
 [node name="topRightCore" type="StaticBody2D" parent="."]
@@ -142,14 +373,18 @@ z_index = 1
 shape = SubResource( 2 )
 
 [node name="green_light" type="Sprite" parent="topRightCore"]
-position = Vector2( 315.042, -317.031 )
+position = Vector2( 170, -165 )
+rotation = 0.785398
 scale = Vector2( 1, 0.25 )
+z_index = 1
 texture = ExtResource( 7 )
 
 [node name="red_light" type="Sprite" parent="topRightCore"]
 visible = false
-position = Vector2( 318.39, -317.513 )
+position = Vector2( 170, -165 )
+rotation = 0.785398
 scale = Vector2( 1.49256, 0.125253 )
+z_index = 1
 texture = ExtResource( 8 )
 
 [node name="bottomRightCore" type="StaticBody2D" parent="."]
@@ -167,17 +402,33 @@ z_index = 1
 shape = SubResource( 2 )
 
 [node name="green_light" type="Sprite" parent="bottomRightCore"]
-position = Vector2( 466.022, 11.8351 )
+position = Vector2( 275, 100 )
+rotation = 1.5708
 scale = Vector2( 1, 0.25 )
+z_index = 1
 texture = ExtResource( 7 )
 
 [node name="red_light" type="Sprite" parent="bottomRightCore"]
 visible = false
-position = Vector2( 472.359, 15.8374 )
+position = Vector2( 275, 100 )
+rotation = 1.5708
 scale = Vector2( 1.49256, 0.125253 )
+z_index = 90
 texture = ExtResource( 8 )
 
 [node name="ShootingSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 
+[node name="Explosion" type="AnimatedSprite" parent="."]
+position = Vector2( -35, 0 )
+scale = Vector2( 6, 6 )
+z_index = 1
+frames = SubResource( 51 )
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = 24.0
+
 [connection signal="timeout" from="firingTimer" to="." method="_on_firingTimer_timeout"]
+[connection signal="timeout" from="NukeTimer" to="." method="_on_NukeTimer_timeout"]
+[connection signal="animation_finished" from="Explosion" to="." method="_on_Explosion_animation_finished"]

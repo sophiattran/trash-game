@@ -36,7 +36,8 @@ playing = true
 position = Vector2( 0, -50 )
 offset = Vector2( 0, -200 )
 current = true
-zoom = Vector2( 1.5, 1.5 )
+zoom = Vector2( 2, 2 )
+limit_top = -500
 
 [node name="vacuum" parent="." instance=ExtResource( 2 )]
 position = Vector2( -15, 80 )

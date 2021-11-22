@@ -9,6 +9,10 @@ var topLeftHealth = 100
 var topRightHealth = 100
 var botRightHealth = 100
 var health = 100
+var botLeft_working = true
+var botRight_working = true
+var topLeft_working = true
+var topRight_working = true
 
 func _ready():
 	random.randomize()
@@ -31,16 +35,18 @@ func getRandomPower(lower, upper):
 func getRandomYoffset():
 	return random.randf_range(-0.5, 0.5)
 func getRandomXoffset():
-	return random.randf_range(-500, 500)
+	var num = randi() % 2
+	if num==0:random.randf_range(-200, -300)
+	return random.randf_range(200, -300)
 
 func _on_firingTimer_timeout():
 	peaceful_mode()
 
 func peaceful_mode():
-	fireTopLeft(getRandomPower(500, 1200))
-	fireTopRight(getRandomPower(500, 1200))
-	fireRight(getRandomPower(500, 1200))
-	fireLeft(getRandomPower(500, 1200))
+	if topLeft_working: fireTopLeft(getRandomPower(200, 1000))
+	if topRight_working: fireTopRight(getRandomPower(200, 1000))
+	if botRight_working: fireRight(getRandomPower(200, 1500))
+	if botLeft_working: fireLeft(getRandomPower(200, 1500))
 
 func defensive_mode():
 	fireTopLeft(getRandomPower(1000, 10000))
@@ -58,19 +64,34 @@ func botLeft_low_health():
 	if botLeftHealth <= 0:
 		$bottomLeftCore/green_light.visible = false
 		$bottomLeftCore/red_light.visible = true
-
+		botLeft_working = false
+		is_monster_dead()
 func topLeft_low_health():
 	if topLeftHealth <= 0:
 		$topLeftCore/green_light.visible = false
 		$topLeftCore/red_light.visible = true
-		
+		topLeft_working = false
+		is_monster_dead()
 func topRight_low_health():
 	if topRightHealth <= 0:
 		$topRightCore/green_light.visible = false
 		$topRightCore/red_light.visible = true
-		
+		topRight_working = false
+		is_monster_dead()
 func botRight_low_health():
 	if botRightHealth <= 0:
-		$botRightCore/green_light.visible = false
-		$botRightCore/red_light.visible = true
-		
+		$bottomRightCore/green_light.visible = false
+		$bottomRightCore/red_light.visible = true
+		botRight_working = false
+		is_monster_dead()
+
+func is_monster_dead():
+	if !botLeft_working and !botRight_working and !topLeft_working and !topRight_working: 
+		$Explosion.play("explosion")
+		$ExplosionSound.play()
+
+func _on_Explosion_animation_finished():
+	queue_free()
+
+func _on_NukeTimer_timeout():
+	launch_nuke()
