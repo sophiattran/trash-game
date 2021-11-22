@@ -9,7 +9,7 @@ func _ready():
 	random_sprite()
 	add_to_group("trash")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if position.y > 1000: queue_free() #remove self from scene after falling into the void
 
 func fly_towards(pos, attraction_vector):

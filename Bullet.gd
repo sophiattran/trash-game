@@ -16,11 +16,11 @@ func _on_Bullet_body_entered(body):
 	set_collision_mask(0)
 	$AnimatedSprite.play("explosion")
 	$LifeTimer.start()
+	$BlastSound.play()
 	
 	if body.is_in_group("trash"): 
 		body.set_collision_layer(0)
 		body.queue_free()
-		$BlastSound.play()
 	elif body == botLeft:
 		monster.botLeftHealth -= 10
 		print("hit bottom left, health:", monster.botLeftHealth)

@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 onready var world = $"../"
+export (PackedScene) var Nuke
 
 var random = RandomNumberGenerator.new() 
 var botLeftHealth = 100
@@ -11,9 +12,6 @@ var health = 100
 
 func _ready():
 	random.randomize()
-	
-func _physics_process(delta):
-	pass
 	
 func fireLeft(power):
 	world.spawnTrash($openingLeft.global_position, power*Vector2(-1,getRandomYoffset()))
@@ -32,6 +30,8 @@ func getRandomPower(lower, upper):
 	return random.randf_range(lower, upper)
 func getRandomYoffset():
 	return random.randf_range(-0.5, 0.5)
+func getRandomXoffset():
+	return random.randf_range(-500, 500)
 
 func _on_firingTimer_timeout():
 	peaceful_mode()
@@ -46,10 +46,13 @@ func defensive_mode():
 	fireTopLeft(getRandomPower(1000, 10000))
 	fireTopRight(getRandomPower(1000, 10000))
 	fireRight(getRandomPower(1000, 10000))
-	fireLeft(getRandomPower(1000, 10000))	
+	fireLeft(getRandomPower(1000, 10000))
 
-func offensive_mode():
-	pass
+func launch_nuke():
+	var nuke = Nuke.instance()
+	world.add_child(nuke)
+	nuke.position = $chimney.global_position
+	nuke.apply_impulse(Vector2.ZERO, Vector2(getRandomXoffset(), -800))
 
 func botLeft_low_health():
 	if botLeftHealth <= 0:

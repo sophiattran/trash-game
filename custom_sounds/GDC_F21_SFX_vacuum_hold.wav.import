@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GDC_F21_SFX_vacuum_hold.wav-c0e480172a96c04aca9ec6a166cff488.sample"
+
+[deps]
+
+source_file="res://custom_sounds/GDC_F21_SFX_vacuum_hold.wav"
+dest_files=[ "res://.import/GDC_F21_SFX_vacuum_hold.wav-c0e480172a96c04aca9ec6a166cff488.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

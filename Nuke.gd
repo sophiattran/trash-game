@@ -1,11 +1,33 @@
 extends RigidBody2D
 
+onready var monster = $"/root/Game/World/TrashMonster"
+onready var player = $"/root/Game/World/Player"
+onready var ground = $"/root/Game/World/TileMap"
 
-# Called when the node enters the scene tree for the first time.
+onready var sprite = $AnimatedSprite
+onready var blast_area = $BlastArea/CollisionShape2D
+var area_of_effect = Vector2(6,6)
+var blasted = false
+
 func _ready():
-	pass # Replace with function body.
+	$TimerSound.play()
 
+func blast_off():
+	blast_area.scale = area_of_effect
+	blast_area.call_deferred("set","disabled",false)
+	sprite.scale = area_of_effect
+	sprite.play("explosion")
+	$BlastSound.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Nuke_body_entered(body):
+	if !blasted and (body==ground or body==player):
+		blasted = true
+		blast_off()
+
+func _on_BlastArea_body_entered(body):
+	if body==player: player.die()
+	elif body==ground or body==monster or body.is_in_group("nukes"): pass
+	else: body.queue_free()
+
+func _on_AnimatedSprite_animation_finished():
+	queue_free()
