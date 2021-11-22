@@ -22,8 +22,11 @@ func _physics_process(delta):
 	if vacuuming: 
 		#if !$VacuumSound.is_playing(): 
 		$VacuumSound.play()
+		$AnimatedSprite.play("wind")
 		var source_pos = muzzle.global_position
 		get_tree().call_group("trash", "fly_towards", source_pos, (mouse_pos-source_pos).normalized())
+	else:
+		$AnimatedSprite.play("default")
 		
 func _on_Area2D_body_entered(body):
 	if vacuuming and body.is_in_group("trash"): 

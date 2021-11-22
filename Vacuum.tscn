@@ -1,11 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://custom_images/vacuum.svg" type="Texture" id=1]
 [ext_resource path="res://vacumn.gd" type="Script" id=2]
 [ext_resource path="res://custom_sounds/GDC_F21_SFX_player_shoot.wav" type="AudioStream" id=3]
+[ext_resource path="res://custom_images/vacuum 7.png" type="Texture" id=4]
+[ext_resource path="res://custom_images/vacuum 5.png" type="Texture" id=5]
+[ext_resource path="res://custom_images/vacuum 6.png" type="Texture" id=6]
+[ext_resource path="res://custom_images/vacuum 4.png" type="Texture" id=7]
+[ext_resource path="res://custom_images/vacuum 3.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 0.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "wind",
+"speed": 5.0
+} ]
 
 [node name="vacuum" type="Sprite"]
 scale = Vector2( 3.67787, 3.7727 )
@@ -27,5 +45,10 @@ shape = SubResource( 1 )
 
 [node name="ShootingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 181.277, 11.4014 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 2 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

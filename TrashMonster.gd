@@ -3,6 +3,11 @@ extends RigidBody2D
 onready var world = $"../"
 
 var random = RandomNumberGenerator.new() 
+var botLeftHealth = 100
+var topLeftHealth = 100
+var topRightHealth = 100
+var botRightHealth = 100
+var health = 100
 
 func _ready():
 	random.randomize()
@@ -46,4 +51,23 @@ func defensive_mode():
 func offensive_mode():
 	pass
 
+func botLeft_low_health():
+	if botLeftHealth <= 0:
+		$bottomLeftCore/green_light.visible = false
+		$bottomLeftCore/red_light.visible = true
 
+func topLeft_low_health():
+	if topLeftHealth <= 0:
+		$topLeftCore/green_light.visible = false
+		$topLeftCore/red_light.visible = true
+		
+func topRight_low_health():
+	if topRightHealth <= 0:
+		$topRightCore/green_light.visible = false
+		$topRightCore/red_light.visible = true
+		
+func botRight_low_health():
+	if botRightHealth <= 0:
+		$botRightCore/green_light.visible = false
+		$botRightCore/red_light.visible = true
+		
