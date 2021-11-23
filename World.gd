@@ -12,7 +12,6 @@ var won = false
 
 func _ready():
 	randomize()
-	$BGtheme.play()
 
 func _physics_process(_delta):
 	if get_tree().get_nodes_in_group("trash").size()==0 and monsterDead and !won: 
@@ -44,3 +43,7 @@ func _on_DieTimer_timeout():
 		get_node("/root/Game/RestartButton/WinGameOverScreen").visible = true
 	else:
 		get_node("/root/Game/RestartButton/LoseGameOverScreen").visible = true
+
+
+func _on_ThemeStartDelay_timeout():
+	$BGtheme.play()
