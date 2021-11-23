@@ -2,10 +2,12 @@ extends Node2D
 
 export (PackedScene) var Trash
 export (PackedScene) var Bullet 
+export (PackedScene) var RestartButton
 
 onready var playerDeathSound = $PlayerDeath
 onready var winSound = $WinSound
 onready var winScreen = $'/root/Game/World/Player/RestartButton/WinGameOverScreen'
+onready var game = $'/root/Game'
 var monsterDead = false
 var won = false
 
@@ -19,7 +21,6 @@ func _physics_process(_delta):
 		winSound.play()
 		winScreen.visible = true
 	
-
 func spawnTrash(pos, impulse): 
 	var trash = Trash.instance()
 	add_child(trash)
@@ -32,8 +33,10 @@ func spawnBullet(pos):
 	bullet.position = pos 
 	bullet.apply_impulse(Vector2.ZERO, (get_global_mouse_position()-pos).normalized()*2000)
 
-func _on_TestTimer_timeout():
-	pass
-
 func restartGame():
 	get_tree().reload_current_scene()
+
+func _on_DieTimer_timeout():
+	var restart = RestartButton.instance()
+	get_tree().paused = true
+	game.add_child(restart)

@@ -10,8 +10,6 @@ var area_of_effect = Vector2(6,6)
 var blasted = false
 
 
-	
-
 func blast_off():
 	blast_area.scale = area_of_effect
 	blast_area.call_deferred("set","disabled",false)

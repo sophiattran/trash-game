@@ -11,11 +11,8 @@ var velocity = Vector2()
 var jumping = false
 var trash = null
 
-export (PackedScene) var RestartButton
-
 onready var gauge = $'/root/Game/CanvasLayer/GUI/HBoxContainer/Bar/Gauge'
 onready var world = $'../'
-onready var game = $'/root/Game'
 onready var bg = $'/root/Game/World/BGtheme'
 onready var dietimer = $'/root/Game/World/DieTimer'
 
@@ -75,12 +72,5 @@ func die():
 	bg.stop()
 	world.playerDeathSound.play()
 	dietimer.start()
-	_on_DieTimer_timeout()
 	queue_free()
-	
-	
 
-func _on_DieTimer_timeout():
-	var button = RestartButton.instance()
-	game.add_child(button)
-	

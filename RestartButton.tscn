@@ -26,10 +26,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Control"]
-margin_left = 450.0
-margin_top = 200.0
-margin_right = 513.0
-margin_bottom = 220.0
+margin_left = 780.0
+margin_top = 489.0
+margin_right = 843.0
+margin_bottom = 509.0
 rect_scale = Vector2( 3, 3 )
 text = "Restart?"
 script = ExtResource( 1 )
