@@ -67,6 +67,7 @@ func die():
 	camera.position.y -= 250
 	camera.zoom = Vector2(2,2)
 	camera.current = true
-	queue_free()	
+	world.playerDeathSound.play()
+	queue_free()
 	
 	

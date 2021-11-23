@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/chararacters/foe_pink.png" type="Texture" id=8]
 [ext_resource path="res://Nuke.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/31-316525_explosion-animation-png.png" type="Texture" id=10]
-[ext_resource path="res://custom_sounds/GDC_F21_SFX_bomb.wav" type="AudioStream" id=11]
+[ext_resource path="res://custom_sounds/GDC_F21_SFX_monster_death.wav" type="AudioStream" id=11]
 [ext_resource path="res://custom_images/opening.png" type="Texture" id=12]
 [ext_resource path="res://custom_images/chimney.png" type="Texture" id=13]
 
@@ -464,9 +464,8 @@ scale = Vector2( 6, 6 )
 z_index = 1
 frames = SubResource( 44 )
 
-[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = 24.0
 
 [connection signal="timeout" from="firingTimer" to="." method="_on_firingTimer_timeout"]
 [connection signal="timeout" from="NukeTimer" to="." method="_on_NukeTimer_timeout"]

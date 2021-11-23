@@ -10,9 +10,9 @@ var topRightHealth = 100
 var botRightHealth = 100
 var health = 100
 var botLeft_working = true
-var botRight_working = true
-var topLeft_working = true
-var topRight_working = true
+var botRight_working = false
+var topLeft_working = false
+var topRight_working = false
 
 func _ready():
 	random.randomize()
@@ -88,7 +88,8 @@ func botRight_low_health():
 func is_monster_dead():
 	if !botLeft_working and !botRight_working and !topLeft_working and !topRight_working: 
 		$Explosion.play("explosion")
-		$ExplosionSound.play()
+		$DeathSound.play()
+		world.monsterDead = true 
 
 func _on_Explosion_animation_finished():
 	queue_free()

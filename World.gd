@@ -3,9 +3,15 @@ extends Node2D
 export (PackedScene) var Trash
 export (PackedScene) var Bullet 
 
+onready var playerDeathSound = $PlayerDeath
+onready var winSound = $WinSound
+var monsterDead = false
 
 func _ready():
 	randomize()
+
+func _physics_process(_delta):
+	if get_tree().get_nodes_in_group("trash").size()==0 and monsterDead: winSound.play()
 
 func spawnTrash(pos, impulse): 
 	var trash = Trash.instance()
