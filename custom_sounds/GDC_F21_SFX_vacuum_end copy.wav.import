@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GDC_F21_SFX_vacuum_end copy.wav-bdfde3338ea735625557c94dbf66e5e8.sample"
+
+[deps]
+
+source_file="res://custom_sounds/GDC_F21_SFX_vacuum_end copy.wav"
+dest_files=[ "res://.import/GDC_F21_SFX_vacuum_end copy.wav-bdfde3338ea735625557c94dbf66e5e8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

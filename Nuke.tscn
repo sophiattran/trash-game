@@ -266,7 +266,9 @@ height = 14.0
 [sub_resource type="CircleShape2D" id=51]
 radius = 86.0058
 
-[node name="Nuke" type="RigidBody2D" groups=["nukes"]]
+[node name="Nuke" type="RigidBody2D" groups=[
+"nukes",
+]]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 2.0

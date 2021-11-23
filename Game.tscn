@@ -11,13 +11,25 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1000, 433.426 )
+position = Vector2( 1537.42, 433.426 )
 scale = Vector2( 1.49295, 1.14663 )
 texture = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( -2000, 433.426 )
 scale = Vector2( 1.49295, 1.14663 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -2002.5, -764.941 )
+scale = Vector2( 1.49295, 1.14663 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1501.15, -759.969 )
+scale = Vector2( 1.49295, 1.14663 )
+z_index = -2
 texture = ExtResource( 3 )
 
 [node name="World" parent="." instance=ExtResource( 2 )]

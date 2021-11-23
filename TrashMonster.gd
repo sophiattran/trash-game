@@ -10,9 +10,9 @@ var topRightHealth = 100
 var botRightHealth = 100
 var health = 100
 var botLeft_working = true
-var botRight_working = false
-var topLeft_working = false
-var topRight_working = false
+var botRight_working = true
+var topLeft_working = true
+var topRight_working = true
 
 func _ready():
 	random.randomize()
@@ -59,27 +59,28 @@ func launch_nuke():
 	world.add_child(nuke)
 	nuke.position = $chimney.global_position
 	nuke.apply_impulse(Vector2.ZERO, Vector2(getRandomXoffset(), -800))
+	$BombShootingSound.play()
 
 func botLeft_low_health():
-	if botLeftHealth <= 0:
+	if botLeftHealth == 0:
 		$bottomLeftCore/green_light.visible = false
 		$bottomLeftCore/red_light.visible = true
 		botLeft_working = false
 		is_monster_dead()
 func topLeft_low_health():
-	if topLeftHealth <= 0:
+	if topLeftHealth == 0:
 		$topLeftCore/green_light.visible = false
 		$topLeftCore/red_light.visible = true
 		topLeft_working = false
 		is_monster_dead()
 func topRight_low_health():
-	if topRightHealth <= 0:
+	if topRightHealth == 0:
 		$topRightCore/green_light.visible = false
 		$topRightCore/red_light.visible = true
 		topRight_working = false
 		is_monster_dead()
 func botRight_low_health():
-	if botRightHealth <= 0:
+	if botRightHealth == 0:
 		$bottomRightCore/green_light.visible = false
 		$bottomRightCore/red_light.visible = true
 		botRight_working = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://custom_images/monster_body_.png" type="Texture" id=1]
 [ext_resource path="res://abstract-platformer-370-assets/PNG/Tiles/Blue tiles/tileBlue_03.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://custom_sounds/GDC_F21_SFX_monster_death.wav" type="AudioStream" id=11]
 [ext_resource path="res://custom_images/opening.png" type="Texture" id=12]
 [ext_resource path="res://custom_images/chimney.png" type="Texture" id=13]
+[ext_resource path="res://custom_sounds/GDC_F21_SFX_blergh.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320, 59.25 )
@@ -466,6 +467,10 @@ frames = SubResource( 44 )
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = 24.0
+
+[node name="BombShootingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
 
 [connection signal="timeout" from="firingTimer" to="." method="_on_firingTimer_timeout"]
 [connection signal="timeout" from="NukeTimer" to="." method="_on_NukeTimer_timeout"]

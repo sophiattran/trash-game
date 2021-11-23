@@ -10,7 +10,7 @@
 [ext_resource path="res://custom_images/vacuum 3.png" type="Texture" id=8]
 [ext_resource path="res://custom_sounds/GDC_F21_SFX_vacuum_hold.wav" type="AudioStream" id=9]
 [ext_resource path="res://custom_sounds/GDC_F21_SFX_vacuum_start.wav" type="AudioStream" id=10]
-[ext_resource path="res://custom_sounds/GDC_F21_SFX_vacuum_end.wav" type="AudioStream" id=11]
+[ext_resource path="res://custom_sounds/GDC_F21_SFX_vacuum_end copy.wav" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://terrain.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://custom_sounds/GDC_F21_SFX_player_death.wav" type="AudioStream" id=7]
 [ext_resource path="res://custom_sounds/GDC_F21_SFX_win_game.wav" type="AudioStream" id=8]
+[ext_resource path="res://custom_sounds/GDC_F21_v4.mp3" type="AudioStream" id=9]
 
 [node name="World" type="Node2D"]
 z_index = 1
@@ -35,5 +36,9 @@ stream = ExtResource( 7 )
 
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="BGtheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = 10.0
 
 [connection signal="timeout" from="TestTimer" to="." method="_on_TestTimer_timeout"]

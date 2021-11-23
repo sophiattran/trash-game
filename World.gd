@@ -6,12 +6,17 @@ export (PackedScene) var Bullet
 onready var playerDeathSound = $PlayerDeath
 onready var winSound = $WinSound
 var monsterDead = false
+var won = false
 
 func _ready():
 	randomize()
+	$BGtheme.play()
 
 func _physics_process(_delta):
-	if get_tree().get_nodes_in_group("trash").size()==0 and monsterDead: winSound.play()
+	if get_tree().get_nodes_in_group("trash").size()==0 and monsterDead and !won: 
+		won = true
+		winSound.play()
+	
 
 func spawnTrash(pos, impulse): 
 	var trash = Trash.instance()
@@ -27,3 +32,6 @@ func spawnBullet(pos):
 
 func _on_TestTimer_timeout():
 	pass
+
+func restartGame():
+	get_tree().reload_current_scene()

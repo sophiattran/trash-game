@@ -11,8 +11,12 @@ var velocity = Vector2()
 var jumping = false
 var trash = null
 
+export (PackedScene) var RestartButton
+
 onready var gauge = $'/root/Game/CanvasLayer/GUI/HBoxContainer/Bar/Gauge'
 onready var world = $'../'
+onready var game = $'/root/Game'
+onready var bg = $'/root/Game/World/BGtheme'
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -67,7 +71,11 @@ func die():
 	camera.position.y -= 250
 	camera.zoom = Vector2(2,2)
 	camera.current = true
+	bg.stop()
 	world.playerDeathSound.play()
+	var button = RestartButton.instance()
+	game.add_child(button)
+	
 	queue_free()
 	
 	
