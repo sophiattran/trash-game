@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Restart.gd" type="Script" id=1]
+[ext_resource path="res://custom_images/unfinished game over.png" type="Texture" id=2]
 
 [node name="RestartButton" type="CanvasLayer"]
+
+[node name="GameOverScreen" type="Sprite" parent="."]
+position = Vector2( 504.847, 287.61 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
