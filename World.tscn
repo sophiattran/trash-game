@@ -41,4 +41,7 @@ stream = ExtResource( 8 )
 stream = ExtResource( 9 )
 volume_db = 10.0
 
+[node name="DieTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="TestTimer" to="." method="_on_TestTimer_timeout"]
+[connection signal="timeout" from="DieTimer" to="Player" method="_on_DieTimer_timeout"]

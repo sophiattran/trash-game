@@ -5,6 +5,7 @@ export (PackedScene) var Bullet
 
 onready var playerDeathSound = $PlayerDeath
 onready var winSound = $WinSound
+onready var winScreen = $'/root/Game/World/Player/RestartButton/WinGameOverScreen'
 var monsterDead = false
 var won = false
 
@@ -16,6 +17,7 @@ func _physics_process(_delta):
 	if get_tree().get_nodes_in_group("trash").size()==0 and monsterDead and !won: 
 		won = true
 		winSound.play()
+		winScreen.visible = true
 	
 
 func spawnTrash(pos, impulse): 

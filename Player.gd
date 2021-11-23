@@ -17,6 +17,7 @@ onready var gauge = $'/root/Game/CanvasLayer/GUI/HBoxContainer/Bar/Gauge'
 onready var world = $'../'
 onready var game = $'/root/Game'
 onready var bg = $'/root/Game/World/BGtheme'
+onready var dietimer = $'/root/Game/World/DieTimer'
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -73,9 +74,13 @@ func die():
 	camera.current = true
 	bg.stop()
 	world.playerDeathSound.play()
-	var button = RestartButton.instance()
-	game.add_child(button)
-	
+	dietimer.start()
+	_on_DieTimer_timeout()
 	queue_free()
 	
+	
+
+func _on_DieTimer_timeout():
+	var button = RestartButton.instance()
+	game.add_child(button)
 	

@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Restart.gd" type="Script" id=1]
 [ext_resource path="res://custom_images/unfinished game over.png" type="Texture" id=2]
+[ext_resource path="res://RestartButton.gd" type="Script" id=3]
 
 [node name="RestartButton" type="CanvasLayer"]
+script = ExtResource( 3 )
 
-[node name="GameOverScreen" type="Sprite" parent="."]
-position = Vector2( 504.847, 287.61 )
+[node name="WinGameOverScreen" type="Sprite" parent="."]
+position = Vector2( 504.847, 295.259 )
+scale = Vector2( 0.27, 0.27 )
+texture = ExtResource( 2 )
+
+[node name="LoseGameOverScreen" type="Sprite" parent="."]
+visible = false
+position = Vector2( 659.361, 165.223 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 
