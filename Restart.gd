@@ -16,5 +16,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	world.restartGame() # Replace with function body.
+	world.restartGame() 
 	queue_free()

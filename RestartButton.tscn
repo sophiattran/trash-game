@@ -8,6 +8,7 @@
 script = ExtResource( 3 )
 
 [node name="WinGameOverScreen" type="Sprite" parent="."]
+visible = false
 position = Vector2( 504.847, 295.259 )
 scale = Vector2( 0.27, 0.27 )
 texture = ExtResource( 2 )

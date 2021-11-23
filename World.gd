@@ -6,7 +6,6 @@ export (PackedScene) var RestartButton
 
 onready var playerDeathSound = $PlayerDeath
 onready var winSound = $WinSound
-onready var winScreen = $'/root/Game/World/Player/RestartButton/WinGameOverScreen'
 onready var game = $'/root/Game'
 var monsterDead = false
 var won = false
@@ -18,8 +17,9 @@ func _ready():
 func _physics_process(_delta):
 	if get_tree().get_nodes_in_group("trash").size()==0 and monsterDead and !won: 
 		won = true
+		$BGtheme.stop()
 		winSound.play()
-		winScreen.visible = true
+		$DieTimer.start()
 	
 func spawnTrash(pos, impulse): 
 	var trash = Trash.instance()
@@ -38,5 +38,9 @@ func restartGame():
 
 func _on_DieTimer_timeout():
 	var restart = RestartButton.instance()
-	get_tree().paused = true
+	#get_tree().paused = true
 	game.add_child(restart)
+	if won:
+		get_node("/root/Game/RestartButton/WinGameOverScreen").visible = true
+	else:
+		get_node("/root/Game/RestartButton/LoseGameOverScreen").visible = true
