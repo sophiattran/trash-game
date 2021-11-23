@@ -36,8 +36,8 @@ func getRandomYoffset():
 	return random.randf_range(-0.5, 0.5)
 func getRandomXoffset():
 	var num = randi() % 2
-	if num==0:random.randf_range(-200, -300)
-	return random.randf_range(200, -300)
+	if num==0:return random.randf_range(-150, -400)
+	return random.randf_range(150, 400)
 
 func _on_firingTimer_timeout():
 	peaceful_mode()

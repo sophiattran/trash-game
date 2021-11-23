@@ -39,7 +39,7 @@ func get_movement_input():
 	var right = Input.is_action_pressed("ui_right")
 	var left = Input.is_action_pressed("ui_left")
 	var jump = Input.is_action_just_pressed("ui_up")
-
+	
 
 	if jumping and jump and gauge.health>=20: 
 		velocity.y = jump_speed
@@ -56,6 +56,9 @@ func get_movement_input():
 	if velocity.x != 0:
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.flip_h = velocity.x < 0
+		
+	if position.y > 2000:
+		die()
 
 	
 func die():
@@ -65,3 +68,5 @@ func die():
 	camera.zoom = Vector2(2,2)
 	camera.current = true
 	queue_free()	
+	
+	
