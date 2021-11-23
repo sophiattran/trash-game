@@ -15,8 +15,8 @@ texture = ExtResource( 2 )
 
 [node name="LoseGameOverScreen" type="Sprite" parent="."]
 visible = false
-position = Vector2( 659.361, 165.223 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 515, 302 )
+scale = Vector2( 0.26425, 0.259 )
 texture = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
