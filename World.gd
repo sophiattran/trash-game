@@ -44,3 +44,5 @@ func _on_DieTimer_timeout():
 		get_node("/root/Game/RestartButton/WinGameOverScreen").visible = true
 	else:
 		get_node("/root/Game/RestartButton/LoseGameOverScreen").visible = true
+		#get_node("/root/Game/RestartButton/Control/Button").position.y = 327
+		#get_node("/root/Game/RestartButton/Control/Button").position.x = 400

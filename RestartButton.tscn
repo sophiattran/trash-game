@@ -1,23 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Restart.gd" type="Script" id=1]
-[ext_resource path="res://custom_images/unfinished game over.png" type="Texture" id=2]
+[ext_resource path="res://custom_images/win game over.jpeg" type="Texture" id=2]
 [ext_resource path="res://RestartButton.gd" type="Script" id=3]
+[ext_resource path="res://custom_images/lose game over.jpeg" type="Texture" id=4]
 
 [node name="RestartButton" type="CanvasLayer"]
 script = ExtResource( 3 )
 
 [node name="WinGameOverScreen" type="Sprite" parent="."]
 visible = false
-position = Vector2( 504.847, 295.259 )
-scale = Vector2( 0.27, 0.27 )
+position = Vector2( 510.328, 299.827 )
+scale = Vector2( 0.256427, 0.246508 )
 texture = ExtResource( 2 )
 
 [node name="LoseGameOverScreen" type="Sprite" parent="."]
 visible = false
-position = Vector2( 659.361, 165.223 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 2 )
+position = Vector2( 512.185, 297.275 )
+scale = Vector2( 0.259788, 0.242 )
+texture = ExtResource( 4 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -27,10 +28,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Control"]
-margin_left = 780.0
-margin_top = 489.0
-margin_right = 843.0
-margin_bottom = 509.0
+margin_left = 400.0
+margin_top = 330.0
+margin_right = 463.0
+margin_bottom = 350.0
 rect_scale = Vector2( 3, 3 )
 text = "Restart?"
 script = ExtResource( 1 )

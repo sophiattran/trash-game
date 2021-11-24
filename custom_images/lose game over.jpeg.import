@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/unfinished game over.png-d7fa19616acdddf67d0299f6285f3bfb.stex"
+path="res://.import/lose game over.jpeg-a7ab191d06e79b6a49a6600511f18521.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://custom_images/unfinished game over.png"
-dest_files=[ "res://.import/unfinished game over.png-d7fa19616acdddf67d0299f6285f3bfb.stex" ]
+source_file="res://custom_images/lose game over.jpeg"
+dest_files=[ "res://.import/lose game over.jpeg-a7ab191d06e79b6a49a6600511f18521.stex" ]
 
 [params]
 
