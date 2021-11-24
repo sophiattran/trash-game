@@ -17,7 +17,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_released("left_click"): 
 		vacuuming = false
 		$VacuumSoundEnd.play()
-	if Input.is_action_just_pressed("F") and gauge.health>=5: 
+	if Input.is_action_just_pressed("ui_accept") and gauge.health>=5: 
 		world.spawnBullet(muzzle.global_position)
 		gauge.update_energy_bar(-5)
 		$ShootingSound.play()
