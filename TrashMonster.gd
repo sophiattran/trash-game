@@ -5,8 +5,8 @@ export (PackedScene) var Nuke
 
 var random = RandomNumberGenerator.new() 
 var botLeftHealth = 100
-var topLeftHealth = 100
-var topRightHealth = 100
+var topLeftHealth = 50
+var topRightHealth = 50 
 var botRightHealth = 100
 var health = 100
 var botLeft_working = true
